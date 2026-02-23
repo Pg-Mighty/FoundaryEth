@@ -3,3 +3,8 @@ members = ["app", "crates/bindings"]
 
 [workspace.dependencies]
 foundry-contracts = { path = "crates/bindings" }
+
+[profile.default]
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+]
