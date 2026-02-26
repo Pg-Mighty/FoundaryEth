@@ -2,3 +2,6 @@
 out/
 cache/
 Cargo.lock
+lib/
+contracts/lib
+
