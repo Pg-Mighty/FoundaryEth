@@ -5,20 +5,14 @@ import {ERC20} from "../../lib/openzeppelin-contracts/contracts/token/ERC20/ERC2
 import "./Counter.sol";
 
 
-contract Counter {
+contract Counter is ERC20 {
     uint256 public number;
 
-    constructor (uint256 newNumber)  {
-        number = newNumber;
+    constructor () ERC20("Mycon", "MC"){
+
     }
 
-    function increment() public {
-        number++;
-    }
-    function decrement() public{
-        number --;
-    }
-    function getNum() public returns(uint256){
-        return number;
-    }
+   function mint(address add, uint amount) public{
+       _mint(add,amount);
+   }
 }
