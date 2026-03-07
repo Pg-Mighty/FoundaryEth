@@ -8,13 +8,13 @@ contract CounterTest is Test {
     Counter c;
 
  function setUp() public{
-c = new Counter(11);
+        c = new Counter();
 
 }
 
-function testInc()public {
-c.increment();
-assertEq(c.getNum(), 11, "Done");
+function testMint()public {
+    c.mint(address(this),25);
+    assertEq(c.balanceOf(address(this)),25,"ok");
 }
 
 }
